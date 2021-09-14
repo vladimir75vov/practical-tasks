@@ -9,7 +9,6 @@ except ValueError:
 except ZeroDivisionError:
     print("ValueError")
 except Exception:
-    print("ValueError")
-
+    print("Exception")
 print(sys.getsizeof(int))
 print(sys.getsizeof(float))
