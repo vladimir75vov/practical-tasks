@@ -7,4 +7,4 @@
 </ul>
 
 ## Обычный запуск
-![](https://github.com/vladimir75vov/Vladimir_Budaev_195/blob/main/Exception/C#/Exception.png) 
+![](https://github.com/vladimir75vov/Vladimir_Budaev_195/blob/main/Exception/C%20Sharp/Exception.png) 
