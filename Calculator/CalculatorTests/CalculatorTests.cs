@@ -87,17 +87,17 @@ namespace Calculator.Tests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod()]
+        [ExpectedException(typeof(ArgumentNullException),"")]
         public void CheckOperationEror()
         {
             double doubleOne = 12.1;
-            string action = "^";
+            string action = "$";
             double doubleTwo = 12.3;
 
             bool expected = true;
 
             bool actual = StringIsDigits(Calculator.calculate(doubleOne, action, doubleTwo).ToString());
-            // Assert
-            Assert.IsFalse(actual);
+
         }
     }
 }

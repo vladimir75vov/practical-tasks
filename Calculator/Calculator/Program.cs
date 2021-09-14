@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Calculator
 {
@@ -6,6 +7,8 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
             Console.WriteLine("Первое число: ");
             double doubleOne = Convert.ToDouble(Console.ReadLine());
 

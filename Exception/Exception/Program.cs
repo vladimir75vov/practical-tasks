@@ -1,14 +1,15 @@
 ﻿using System;
+using System.Text;
 
 namespace Exception
 {
     class Program
     {
-        static float zero(int a, int b)
+        static int zero(int a, int b)
         {
             try
             {
-                return (float)a / b;
+                return a / b;
             }
             catch
             {
@@ -19,6 +20,8 @@ namespace Exception
 
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
             int a = int.Parse(Console.ReadLine());
             int b = int.Parse(Console.ReadLine());
 

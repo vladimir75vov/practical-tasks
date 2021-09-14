@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace ClassLibraryPassword
 {
@@ -6,10 +7,11 @@ namespace ClassLibraryPassword
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
 
             PasswordChecker passwordChecker = new PasswordChecker();
 
-            Console.WriteLine(passwordChecker.ValidatePassword("Vladimir75VoV_"));
+            Console.WriteLine(passwordChecker.ValidatePassword(Console.ReadLine()));
         }
     }
 }

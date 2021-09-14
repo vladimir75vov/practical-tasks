@@ -25,7 +25,7 @@ namespace Calculator
             if (action == "%")
                 return (double)doubleOne % doubleTwo;
 
-            throw new Exception("Не найдена операция!");
+            throw new ArgumentNullException();
         }
         public double Calculate(double doubleOne, string action, double doubleTwo)
         {

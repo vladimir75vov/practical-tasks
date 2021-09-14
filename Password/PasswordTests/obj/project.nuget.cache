@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5zgVIRjlIHzFA3Adn45ir8PVjI2W8N8jcghDPu2eeGlyokMdWRapwKSeee94FZH93QeGzg/vUCUTnREQRMZoTw==",
+  "dgSpecHash": "+7GrSO1N0q4OJwsW3HN3nyI4OJgzjNOt7simRbyOxEUxzHIfCAvqOrKTxypvq2+bD81uSIT0iE6/L2Wx4+xgdg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vladimir75vov\\source\\repos\\Password\\PasswordTests\\PasswordTests.csproj",
+  "projectFilePath": "C:\\Users\\vladimir75vov\\Desktop\\  \\Project\\Vladimir_Budaev_195\\Password\\PasswordTests\\PasswordTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vladimir75vov\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\vladimir75vov\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",
