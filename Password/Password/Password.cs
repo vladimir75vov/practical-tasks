@@ -28,6 +28,11 @@ namespace ClassLibraryPassword
             if (password.Intersect("!@#$%^&*()_+=-<>,./?';:\\|").Count() == 0)
                 return false;
 
+            if(password.Intersect("éöóêååíãøùçõúôûâàïğîëäæıÿ÷ñìèòüáşÉÖÓÊÅÍÃØÙÇÕÚÔÛÂÀÏĞÎËÄÆİß×ÑÌÈÒÜÁŞ").Count() != 0)
+            {
+                return false;
+            }
+
             return true;
         }
         public bool ValidatePassword(string password)

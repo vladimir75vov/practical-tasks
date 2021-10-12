@@ -11,6 +11,7 @@ namespace ClassLibraryPassword
 
             PasswordChecker passwordChecker = new PasswordChecker();
 
+            Console.Write("Пароль: ");
             Console.WriteLine(passwordChecker.ValidatePassword(Console.ReadLine()));
         }
     }

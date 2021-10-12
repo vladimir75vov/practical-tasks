@@ -121,5 +121,16 @@ namespace ClassLibraryPassword.Tests
             // Assert
             Assert.IsFalse(actual);
         }
+        [TestMethod()]
+        public void Check_4Latiniha_ReturnsTrue()
+        {
+            // Arrange
+            string password = "ФaP20_ggggga";
+            bool expected = false;
+            // Act
+            bool actual = PasswordChecker.validatePassword(password);
+            // Assert
+            Assert.IsFalse(actual);
+        }
     }
 }
