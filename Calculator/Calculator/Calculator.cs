@@ -8,8 +8,36 @@ namespace Calculator
 {
     public class Calculator
     {
-        public static double calculate(double doubleOne, string action, double doubleTwo)
+        public static double calculate(string doubleOneStr, string action, string doubleTwoStr)
         {
+            double doubleOne;
+            double doubleTwo;
+            try
+            {
+                if (doubleOneStr.Any(c => char.IsLetter(c)))
+                    throw new Exception("Первый символ False");
+                else
+                    doubleOne = Convert.ToDouble(doubleOneStr);
+            }
+            catch (Exception e) //отлов исключения
+            {
+                Console.WriteLine($"Ошибка: {e.Message}");
+                return 0;
+            }
+
+            try
+            {
+                if (doubleTwoStr.Any(c => char.IsLetter(c)))
+                    throw new Exception("Второй символ False");
+                else
+                    doubleTwo = Convert.ToDouble(doubleTwoStr);
+            }
+            catch (Exception e) //отлов исключения
+            {
+                Console.WriteLine($"Ошибка: {e.Message}");
+                return 0;
+            }
+
             if (action == "+")
                 return (double)doubleOne + doubleTwo;
 
@@ -25,9 +53,17 @@ namespace Calculator
             if (action == "%")
                 return (double)doubleOne % doubleTwo;
 
-            throw new ArgumentNullException();
+            try
+            {
+                throw new Exception("Нету оператора");
+            }
+            catch (Exception e) //отлов исключения
+            {
+                Console.WriteLine($"Ошибка: {e.Message}");
+                return 0;
+            }
         }
-        public double Calculate(double doubleOne, string action, double doubleTwo)
+        public double Calculate(string doubleOne, string action, string doubleTwo)
         {
             return calculate(doubleOne, action, doubleTwo);
         }

@@ -10,13 +10,13 @@ namespace Calculator
             Console.OutputEncoding = Encoding.UTF8;
 
             Console.WriteLine("Первое число: ");
-            double doubleOne = Convert.ToDouble(Console.ReadLine());
+            string doubleOne = Console.ReadLine();
 
             Console.WriteLine("Действие %, *, /, +, - : ");
-            string action = Convert.ToString(Console.ReadLine());
+            string action = Console.ReadLine();
 
             Console.WriteLine("Второе число: ");
-            double doubleTwo = Convert.ToDouble(Console.ReadLine());
+            string doubleTwo = Console.ReadLine();
 
             Calculator calculator = new Calculator();
 

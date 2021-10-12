@@ -11,7 +11,7 @@ namespace Calculator.Tests
     [TestClass()]
     public class CalculatorTests
     {
-        bool StringIsDigits(string s)
+        /*bool StringIsDigits(string s)
         {
             double num;
             if (double.TryParse(s, out num))
@@ -19,27 +19,27 @@ namespace Calculator.Tests
                 return true;
             }
             return false;
-        }
+        }*/
 
         [TestMethod()]
         public void CheckOperationAddition()
         {
-            double doubleOne = 12.1;
+            string doubleOne = "12,1";
             string action = "+";
-            double doubleTwo = 12.3;
+            string doubleTwo = "12,3";
 
-            bool expected = true;
+            double expected = 24.4;
 
-            bool actual = StringIsDigits(Calculator.calculate(doubleOne, action, doubleTwo).ToString());
+            double actual = Calculator.calculate(doubleOne, action, doubleTwo);
             // Assert
             Assert.AreEqual(expected, actual);
         }
-        [TestMethod()]
-        public void CheckOperationSubtraction()
+        //[TestMethod()]
+/*        public void CheckOperationSubtraction()
         {
-            double doubleOne = 12.1;
+            string doubleOne = "12.1";
             string action = "-";
-            double doubleTwo = 12.3;
+            string doubleTwo = "12.3";
 
             bool expected = true;
 
@@ -50,9 +50,9 @@ namespace Calculator.Tests
         [TestMethod()]
         public void CheckOperationMultiplication()
         {
-            double doubleOne = 12.1;
+            string doubleOne = "12.1";
             string action = "*";
-            double doubleTwo = 12.3;
+            string doubleTwo = "12.3";
 
             bool expected = true;
 
@@ -63,9 +63,9 @@ namespace Calculator.Tests
         [TestMethod()]
         public void CheckOperationDivision()
         {
-            double doubleOne = 12.1;
+            string doubleOne = "12.1";
             string action = "/";
-            double doubleTwo = 12.3;
+            string doubleTwo = "12.3";
 
             bool expected = true;
 
@@ -76,28 +76,34 @@ namespace Calculator.Tests
         [TestMethod()]
         public void CheckOperationPercent()
         {
-            double doubleOne = 12.1;
+            string doubleOne = "12.1";
             string action = "%";
-            double doubleTwo = 12.3;
+            string doubleTwo = "12.3";
 
             bool expected = true;
 
             bool actual = StringIsDigits(Calculator.calculate(doubleOne, action, doubleTwo).ToString());
             // Assert
             Assert.AreEqual(expected, actual);
-        }
+        }*/
         [TestMethod()]
-        [ExpectedException(typeof(ArgumentNullException),"")]
-        public void CheckOperationEror()
+        public void TestDiv_null()
         {
-            double doubleOne = 12.1;
-            string action = "$";
-            double doubleTwo = 12.3;
+            try
+            {
+                string a = "25";
+                string b = "1";
 
-            bool expected = true;
+                string operation = "$";
+                double res = 0;
+                double actual = Calculator.calculate(a, operation, b);
 
-            bool actual = StringIsDigits(Calculator.calculate(doubleOne, action, doubleTwo).ToString());
-
+                Assert.AreEqual(actual, res);
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.Message);
+            }
         }
     }
 }
