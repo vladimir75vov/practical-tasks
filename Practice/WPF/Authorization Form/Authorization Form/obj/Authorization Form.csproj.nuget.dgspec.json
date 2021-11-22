@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vladimir75vov\\source\\repos\\Authorization Form\\Authorization Form\\Authorization Form.csproj": {}
+    "C:\\Users\\vladimir75vov\\Desktop\\  \\Project\\GitHub\\Vladimir_Budaev_195\\Practice\\WPF\\Authorization Form\\Authorization Form\\Authorization Form.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vladimir75vov\\source\\repos\\Authorization Form\\Authorization Form\\Authorization Form.csproj": {
+    "C:\\Users\\vladimir75vov\\Desktop\\  \\Project\\GitHub\\Vladimir_Budaev_195\\Practice\\WPF\\Authorization Form\\Authorization Form\\Authorization Form.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vladimir75vov\\source\\repos\\Authorization Form\\Authorization Form\\Authorization Form.csproj",
+        "projectUniqueName": "C:\\Users\\vladimir75vov\\Desktop\\  \\Project\\GitHub\\Vladimir_Budaev_195\\Practice\\WPF\\Authorization Form\\Authorization Form\\Authorization Form.csproj",
         "projectName": "Authorization Form",
-        "projectPath": "C:\\Users\\vladimir75vov\\source\\repos\\Authorization Form\\Authorization Form\\Authorization Form.csproj",
+        "projectPath": "C:\\Users\\vladimir75vov\\Desktop\\  \\Project\\GitHub\\Vladimir_Budaev_195\\Practice\\WPF\\Authorization Form\\Authorization Form\\Authorization Form.csproj",
         "packagesPath": "C:\\Users\\vladimir75vov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vladimir75vov\\source\\repos\\Authorization Form\\Authorization Form\\obj\\",
+        "outputPath": "C:\\Users\\vladimir75vov\\Desktop\\  \\Project\\GitHub\\Vladimir_Budaev_195\\Practice\\WPF\\Authorization Form\\Authorization Form\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -49,6 +49,10 @@
             "MaterialDesignThemes": {
               "target": "Package",
               "version": "[4.2.1, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.27, )"
             }
           },
           "imports": [
