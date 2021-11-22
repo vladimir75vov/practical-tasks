@@ -2,55 +2,94 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows;
 
 namespace Authorization_Form
 {
-    class DBMySQL
+    static class DBMySQL
     {
-        string host = "127.0.0.1";
-        int port = 3306;
-        string dataBase = "mydb";
-        string userName = "root";
-        string password = "Vova200375";
+        static private string host = "localhost";
+        static private int port = 3306;
+        static private string dataBase = "mydb";
+        static private string userName = "root";
+        static private string password = "Vova200375";
 
-        public MySqlConnection getDBConnection()
+        static private DataTable data; // решить!!!
+
+        public static MySqlConnection getDBConnection(string host, string dataBase, int port,
+                                                      string userName, string password)
         {
-            String connectionString = "Server=" + this.host + ";Database=" + this.dataBase + ";port=" + this.port + ";User Id=" + this.userName + ";password=" + this.password;
+            DBMySQL.host = host;
+            DBMySQL.port = port;
+            DBMySQL.dataBase = dataBase;
+            DBMySQL.userName = userName;
+            DBMySQL.password = password;
+
+            return DBMySQL.getDBConnection();
+        }
+
+        public static MySqlConnection getDBConnection()
+        {
+            string connectionString = "Server=" + DBMySQL.host + ";Database=" + DBMySQL.dataBase + ";port=" + DBMySQL.port + ";User Id=" + DBMySQL.userName + ";password=" + DBMySQL.password;
 
             MySqlConnection connection = new MySqlConnection(connectionString);
 
             return connection;
         }
-        public MySqlConnection getDBConnection(string host, int port, string dataBase, string userName, string password)
+        public static MySqlCommand getDBCommand(string sql, MySqlConnection mySqlConnection)
         {
-            this.host = host;
-            this.port = port;
-            this.dataBase = dataBase;
-            this.userName = userName;
-            this.password = password;
-
-            return getDBConnection();
+            return new MySqlCommand(sql, mySqlConnection);
         }
-        public MySqlCommand getDBCommand(string sql)
+        public static MySqlDataReader getDBReader(MySqlCommand mySqlCommand)
         {
-            return new MySqlCommand(sql, getDBConnection());
+            return mySqlCommand.ExecuteReader();
         }
-        public string getDBLotData(MySqlCommand mySqlCommand)
+
+        //////// get
+
+        public static DataTable executingSQLCommand(string sql)
         {
-            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter();
+            MySqlConnection connection = DBMySQL.getDBConnection();
 
-            DataSet dataTable = new DataSet();
+            connection.Open();
+            MySqlCommand command = DBMySQL.getDBCommand(sql, connection);
+            MySqlDataReader reader = DBMySQL.getDBReader(command);
 
-            mySqlDataAdapter.FillAsync(dataTable);
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
 
+            reader.Close();
+            reader.Dispose();
+            connection.Close();
+            connection.Dispose();
 
-
-            return "";
+            return dataTable;
         }
-        public string getDBLittleData(MySqlCommand mySqlCommand)
+        public static string[] getDBArrayDataLine(DataTable dataTable, int line)
         {
-            return mySqlCommand.ExecuteScalar().ToString(); ;
+            string[] stringLine = new string[dataTable.Columns.Count];
+
+            for (int i = 0; i < stringLine.Length; i++)
+            {
+                stringLine[i] = dataTable.Rows[line][i].ToString();
+            }
+            return stringLine;
         }
+        public static string[] getDBArrayDataColumn(DataTable dataTable, int column)
+        {
+            string[] stringColumn = new string[dataTable.Rows.Count];
+
+            for (int i = 0; i < stringColumn.Length; i++)
+            {
+                stringColumn[i] = dataTable.Rows[i][column].ToString();
+            }
+            return stringColumn;
+        }
+        public static string getDBStringDataIndex(DataTable dataTable, int line, int column)
+        {
+            return dataTable.Rows[line][column].ToString();
+        }
+
     }
 }

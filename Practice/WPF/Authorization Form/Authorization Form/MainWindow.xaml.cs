@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Data;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media;
@@ -128,26 +129,8 @@ namespace Authorization_Form
 
             validate(login, passOne, passTwo, email);
 
-            //
-            DBMySQL dBMySQL = new DBMySQL();
-
-            MySqlConnection connection = dBMySQL.getDBConnection();
-            MySqlCommand command = dBMySQL.getDBCommand("SELECT * FROM 'user'");
-            connection.Open();
-            try
-            {
-                var _ = dBMySQL.getDBLotData(command);
-                MessageBox.Show(_);
-            }
-            catch (Exception E)
-            {
-                MessageBox.Show(E.ToString());
-            }
-            finally
-            {
-                connection.Close();
-                connection.Dispose();
-            }
+            var test = DBMySQL.getDBArrayData("INSERT INTO `mydb`.`user` (`idUser`, `login`, `pass`, `email`) VALUES ('5', 'asdad', 'sda', 'zasdsdazxc@gmail.com');").ToString();
+            MessageBox.Show(test);
         }
     }
 }
