@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "DpmjsmHG42ZGw3x0Gzj6USZ3YQgpKKhaMC83J4pEtO9ed9c+GrrEDOFuwC6ai8y68hGoysBRow1eS8Cj0CtJJg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vladimir75vov\\source\\repos\\Authorization Form\\Authorization Form\\Authorization Form.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vladimir75vov\\.nuget\\packages\\materialdesigncolors\\2.0.3\\materialdesigncolors.2.0.3.nupkg.sha512",
+    "C:\\Users\\vladimir75vov\\.nuget\\packages\\materialdesignthemes\\4.2.1\\materialdesignthemes.4.2.1.nupkg.sha512"
+  ],
+  "logs": []
+}
