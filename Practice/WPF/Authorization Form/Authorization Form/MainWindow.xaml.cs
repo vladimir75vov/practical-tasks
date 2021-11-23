@@ -77,6 +77,17 @@ namespace Authorization_Form
 
                 return false;
             }
+            else
+            {
+                DataTable auth = DBMySQL.executingSQLCommand($"SELECT login FROM `user` WHERE(login = '{login}')");
+                if (auth.Rows.Count == 1)
+                {
+                    textBoxLogin.ToolTip = toolTip + "\nЛогин уже занят";
+                    textBoxLogin.Background = brushesError;
+                    return false;
+                }
+                    
+            }
 
             textBoxLogin.ToolTip = "";
             textBoxLogin.Background = brushesAccses;
@@ -111,6 +122,17 @@ namespace Authorization_Form
 
                 return false;
             }
+            else
+            {
+                DataTable auth = DBMySQL.executingSQLCommand($"SELECT login FROM `email` WHERE(email = '{email}')");
+                if (auth.Rows.Count == 1)
+                {
+                    textBoxEmail.ToolTip = toolTip + "\nEmail уже используется";
+                    textBoxEmail.Background = brushesError;
+                    return false;
+                }
+
+            }
 
             textBoxEmail.ToolTip = "";
             textBoxEmail.Background = brushesAccses;
@@ -137,6 +159,13 @@ namespace Authorization_Form
                 }
 
             }
+        }
+
+        private void Button_Click_Enter(object sender, RoutedEventArgs e)
+        {
+            AuthWindow AuthWindow = new AuthWindow();
+            AuthWindow.Show();
+            Hide();
         }
     }
 }

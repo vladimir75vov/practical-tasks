@@ -56,3 +56,5 @@ C:\Users\vladimir75vov\Desktop\  \Project\GitHub\Vladimir_Budaev_195\Practice\
 C:\Users\vladimir75vov\Desktop\  \Project\GitHub\Vladimir_Budaev_195\Practice\WPF\Authorization Form\Authorization Form\bin\Debug\net5.0-windows\MySql.Data.dll
 C:\Users\vladimir75vov\Desktop\  \Project\GitHub\Vladimir_Budaev_195\Practice\WPF\Authorization Form\Authorization Form\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
 C:\Users\vladimir75vov\Desktop\  \Project\GitHub\Vladimir_Budaev_195\Practice\WPF\Authorization Form\Authorization Form\bin\Debug\net5.0-windows\ZstdNet.dll
+C:\Users\vladimir75vov\Desktop\  \Project\GitHub\Vladimir_Budaev_195\Practice\WPF\Authorization Form\Authorization Form\obj\Debug\net5.0-windows\AuthWindow.g.cs
+C:\Users\vladimir75vov\Desktop\  \Project\GitHub\Vladimir_Budaev_195\Practice\WPF\Authorization Form\Authorization Form\obj\Debug\net5.0-windows\AuthWindow.baml

@@ -17,7 +17,7 @@
                 <TextBlock Text="Регистация" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
                 <Grid Margin="0 0 0 20">
                     <Button HorizontalAlignment="Left" Content="Регистрация"/>
-                    <Button HorizontalAlignment="Right" Content="Войти" Style="{StaticResource MaterialDesignFlatButton}"/>
+                    <Button HorizontalAlignment="Right" Content="Войти" Click="Button_Click_Enter" Style="{StaticResource MaterialDesignFlatButton}"/>
                 </Grid>
                 <TextBox x:Name="textBoxLogin" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 <PasswordBox x:Name="passwordBoxPassOne" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
