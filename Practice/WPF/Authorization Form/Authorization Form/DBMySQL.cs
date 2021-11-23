@@ -66,6 +66,7 @@ namespace Authorization_Form
 
             return dataTable;
         }
+
         public static string[] getDBArrayDataLine(DataTable dataTable, int line)
         {
             string[] stringLine = new string[dataTable.Columns.Count];
@@ -90,6 +91,5 @@ namespace Authorization_Form
         {
             return dataTable.Rows[line][column].ToString();
         }
-
     }
 }

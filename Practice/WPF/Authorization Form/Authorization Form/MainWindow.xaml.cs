@@ -83,7 +83,7 @@ namespace Authorization_Form
 
             if (validatePassword(passOne) == false)
             {
-                passwordBoxPassOne.ToolTip = toolTip;
+                passwordBoxPassOne.ToolTip = toolTip + "\nПароль должен быть не менее 8 символов и не более 20 символов, содержать комбинацию цифр, строчных и заглавных букв, а также спец. символ";
                 passwordBoxPassOne.Background = brushesError;
 
                 return false;
@@ -94,7 +94,7 @@ namespace Authorization_Form
 
             if (validatePasswordSecond(passOne, passTwo) == false)
             {
-                passwordBoxPassTwo.ToolTip = toolTip;
+                passwordBoxPassTwo.ToolTip = toolTip + "\nПароли должны совпадать";
                 passwordBoxPassTwo.Background = brushesError;
 
                 return false;
@@ -106,7 +106,7 @@ namespace Authorization_Form
 
             if (validateEmail(email) == false)
             {
-                textBoxEmail.ToolTip = toolTip;
+                textBoxEmail.ToolTip = toolTip + "\nТакой почти не существует";
                 textBoxEmail.Background = brushesError;
 
                 return false;
@@ -118,8 +118,6 @@ namespace Authorization_Form
             return true;
         }
 
-
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string login = textBoxLogin.Text.Trim();
@@ -127,10 +125,18 @@ namespace Authorization_Form
             string passTwo = passwordBoxPassTwo.Password.Trim();
             string email = textBoxEmail.Text.Trim().ToLower();
 
-            validate(login, passOne, passTwo, email);
+            if (validate(login, passOne, passTwo, email) == true)
+            {
+                try
+                {
+                    DBMySQL.executingSQLCommand($"INSERT INTO `mydb`.`user` (`login`, `pass`, `email`) VALUES ('{login}', '{passOne}', '{email}');");
+                }
+                catch (Exception er)
+                {
+                    MessageBox.Show($"Произошла ошибка с соединением с сервером! \n\n{er}");
+                }
 
-            var test = DBMySQL.getDBArrayData("INSERT INTO `mydb`.`user` (`idUser`, `login`, `pass`, `email`) VALUES ('5', 'asdad', 'sda', 'zasdsdazxc@gmail.com');").ToString();
-            MessageBox.Show(test);
+            }
         }
     }
 }
